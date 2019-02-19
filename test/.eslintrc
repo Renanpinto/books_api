@@ -1,0 +1,28 @@
+{
+  "env": {
+    "es6": true,
+    "jest": true,
+    "node": true
+  },
+  "extends": "airbnb-base",
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 2018
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src", "test"]
+      }
+    }
+  },
+  "rules": {
+    "sort-imports": "off",
+    "max-lines": "off",
+    "max-lines-per-function": "off",
+    "no-undef": "off",
+    "max-len": "off",
+    "max-statements": "off",
+    "max-nested-callbacks": "off"
+  }
+}

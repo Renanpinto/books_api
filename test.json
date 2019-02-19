@@ -1,0 +1,28 @@
+{
+  "testEnvironment": "node",
+  "collectCoverage": true,
+  "coverageThreshold":{
+     "global":{
+        "branches": 85,
+        "functions": 85,
+        "lines": 85,
+        "statements": 85
+     }
+  },
+  "collectCoverageFrom":[
+     "src/**/*.js",
+     "!src/index.js",
+     "!src/config/**",
+     "!src/test/**",
+     "!src/db/**/*.js",
+     "!coverage/**/*.js",
+     "!src/infrastructure/factories/**",
+     "!src/infrastructure/http/**/*.js",
+     "!src/infrastructure/routers/**/*.js",
+     "!src/helpers/**/*.js"
+  ],
+  "reporters": [ "default", "jest-junit" ],
+  "testMatch":[
+     "**/?(*.)(spec).js?(x)"
+  ]
+}

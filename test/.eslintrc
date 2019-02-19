@@ -17,13 +17,10 @@
     }
   },
   "rules": {
-    "sort-imports": "off",
     "max-lines": "off",
     "max-lines-per-function": "off",
+    "class-methods-use-this": "off",
     "linebreak-style": "off",
-    "no-undef": "off",
-    "max-len": "off",
-    "max-statements": "off",
-    "max-nested-callbacks": "off"
+    "no-undef": "off"
   }
 }

@@ -23,7 +23,7 @@ class BookCommand extends EventEmitter {
         return;
       }
       this.repository.saveBook(book);
-      this.emit(success, `MESSAGES.book.saved - id: ${book.id}`);
+      this.emit(success, `${MESSAGES.book.saved} - id: ${book.id}`);
     } catch (exception) {
       console.log('bookCommand ', exception);
       this.emit(internalError, exception);

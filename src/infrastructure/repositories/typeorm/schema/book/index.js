@@ -22,4 +22,5 @@ export default new EntitySchema({
   name: 'Book',
   schema: 'programming_books',
   tableName: 'book',
+  target: 'Book',
 });

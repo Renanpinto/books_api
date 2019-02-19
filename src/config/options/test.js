@@ -1,6 +1,10 @@
 import * as path from 'path';
 import TypeOrmConfigFactory from '../orm/typeorm/typeorm-config-factory';
 
+const dotenv = require('dotenv');
+
+dotenv.load();
+
 const config = {
   database: process.env.DATABASE_NAME,
   entities: [path.resolve(__dirname, '../../infrastructure/repositories/typeorm/schema/**/index.js')],

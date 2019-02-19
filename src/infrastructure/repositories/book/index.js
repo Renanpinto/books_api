@@ -1,4 +1,3 @@
-/* eslint-disable max-lines */
 import BookSchema from '../typeorm/schema/book';
 
 class BookRepository {

@@ -56,37 +56,10 @@ class Database {
     return { error, result };
   }
 
-  multipleTransactions(transactionsParams, callback, options) {
-    return Promise.map(
-      transactionsParams,
-      transactionParam => this.transaction(
-        queryRunner => callback(queryRunner, transactionParam), transactionParam,
-      ),
-      options,
-    );
-  }
-
   async getRepository(target) {
     const connection = await this.getConnection();
 
     return connection.getRepository(target);
-  }
-
-  async createQueryBuilder(target, table) {
-    const connection = await this.getConnection();
-
-    return connection.createQueryBuilder(target, table);
-  }
-
-  async check() {
-    const connection = await this.getConnection();
-    const now = await connection.query('SELECT now();');
-
-    if (now.length !== 0 && now[0].now !== undefined) {
-      return true;
-    }
-
-    return false;
   }
 }
 

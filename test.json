@@ -21,7 +21,7 @@
      "!src/infrastructure/routers/**/*.js",
      "!src/helpers/**/*.js"
   ],
-  "reporters": [ "default", "jest-junit" ],
+  "reporters": [ "default" ],
   "testMatch":[
      "**/?(*.)(spec).js?(x)"
   ]

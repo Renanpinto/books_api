@@ -56,7 +56,7 @@ export default class BookService {
   async getISBN(bookUrl) {
     let isbnResult = 'Unavailable';
     const { body } = await this.request({ method: 'GET', url: bookUrl });
-    let response = body.replace(/<\/span>|\n|<span>|: {4}> |: {4}>|<span class="a-size-base a-color-base"|<span itemprop="isbn"|ISBN">|:<\/b>|<\/li>|<li>|<b>/gi, '');
+    let response = body.replace(/<\/span>|\n|<span>|: {4}> |: {4}>|<span class="a-size-base a-color-base"|<span itemprop="isbn"|ISBN">|:<\/b>|<\/li>|<li>|<b>|ISBNs/gi, '');
     response = response.replace(/ISBN-10|ISBN-13|ISBN 13>/gi, 'ISBN: ');
     if (response.search('ISBN') !== -1) {
       isbnResult = response.substr(response.search('ISBN'), 50);

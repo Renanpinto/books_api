@@ -31,7 +31,7 @@ class BookHandler {
   }
 
   onSuccess(message) {
-    this.response.status(200).json({ message });
+    this.response.status(200).json(message);
   }
 
   buildInput() {

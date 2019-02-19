@@ -19,11 +19,12 @@ export default class BookService {
       try {
         isbn = await this.getISBN(book.url);
       } catch (error) {
-        isbn = 'null';
+        isbn = 'Unavailable';
       }
       return Object.assign(book, { isbn });
     }));
     const result = {
+      numberBooks: books.length,
       books: output,
     };
     return result;
@@ -53,15 +54,15 @@ export default class BookService {
   }
 
   async getISBN(bookUrl) {
-    let a = 'null';
+    let isbnResult = 'Unavailable';
     const { body } = await this.request({ method: 'GET', url: bookUrl });
     let response = body.replace(/<\/span>|\n|<span>|: {4}> |: {4}>|<span class="a-size-base a-color-base"|<span itemprop="isbn"|ISBN">|:<\/b>|<\/li>|<li>|<b>/gi, '');
-    response = response.trim().replace(/ISBN-10|ISBN-13|ISBN 13>/gi, 'ISBN: ');
+    response = response.replace(/ISBN-10|ISBN-13|ISBN 13>/gi, 'ISBN: ');
     if (response.search('ISBN') !== -1) {
-      a = response.substr(response.search('ISBN'), 50);
-      a = a.slice(0, 20);
-      console.log(a);
+      isbnResult = response.substr(response.search('ISBN'), 50);
+      isbnResult = isbnResult.slice(0, 20);
+      console.log(isbnResult);
     }
-    return a;
+    return isbnResult;
   }
 }

@@ -62,7 +62,7 @@ This will get a specific book from the database
 
 **/api/v1/books**
 
-This will all books from the website (https://kotlinlang.org/docs/books.html)
+This will get all books from the website (https://kotlinlang.org/docs/books.html)
 
 * **Method:**
 

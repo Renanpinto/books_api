@@ -4,9 +4,11 @@
 
 To use this appplication we`ll need
 
-[Postgres database]. (https://www.postgresql.org/download/);
+[Postgres database](https://www.postgresql.org/download/);
 
-[npm]. (https://www.npmjs.com/get-npm);
+[NodeJs](https://nodejs.org/en/download/)
+
+[NPM](https://www.npmjs.com/get-npm);
 
 ### Setup
 
@@ -22,27 +24,49 @@ To run tests Run `npm test`.
 
 ### Endpoints
 
-This will save a book into the database
+**/api/v1/book**
 
-POST /api/v1/book
-    ``{
-	    "title": "title",
-	    "description": "description",
-	    "language": "pt",
-	    "isbn": "isbn"
-    }``
+  This will save a book into the database
+
+* **Method:**
+
+  `POST`
+  
+*  **URL Body**
+
+   **Required:**
+    ```javascript
+    {
+	    "title": "string",
+	    "description": "string",
+	    "language": "string",
+	    "isbn": "string"
+    }
+    ```
+
+
+**/api/v1/book**
 
 This will get all books from the database
 
-GET /api/v1/book
+* **Method:**
 
+  `GET`
+
+**/api/v1/book/{:id}**
 This will get a specific book from the database
 
-GET /api/v1/book/{:id}
+* **Method:**
+
+  `GET`
+
+**/api/v1/books**
 
 This will all books from the website (https://kotlinlang.org/docs/books.html)
 
-GET /api/v1/books
+* **Method:**
+
+  `GET`
 
 ### Lint
 
